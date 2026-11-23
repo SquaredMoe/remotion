@@ -60,6 +60,7 @@ import {
 	getDelayRenderSuspendedTime,
 	suspendDelayRenderTimeout,
 } from './delay-render.js';
+import {disposeMediabunnyInput} from './dispose-mediabunny-input.js';
 import {
 	EditorPropsContext,
 	EditorPropsProvider,
@@ -81,6 +82,7 @@ import {
 import {
 	cleanupEffectChainState,
 	createEffectChainState,
+	getEffectChainLink,
 	runEffectChain,
 } from './effects/run-effect-chain.js';
 import {useEffectChainState} from './effects/use-effect-chain-state.js';
@@ -407,6 +409,7 @@ export const Internals = {
 	evaluateSourcePropStatuses,
 	AbsoluteFillElement,
 	MaxMediaCacheSizeContext,
+	disposeMediabunnyInput,
 	getMediabunnyInputResourceKey,
 	globalMediaResourceManager,
 	makeMediaResourceManager,
@@ -584,6 +587,7 @@ export const Internals = {
 	createEffectChainState,
 	cleanupEffectChainState,
 	runEffectChain,
+	getEffectChainLink,
 	useMemoizedEffects,
 	getGpuDevice,
 	subscribeToEffectSource,

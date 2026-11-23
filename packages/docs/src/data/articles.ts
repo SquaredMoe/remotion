@@ -955,6 +955,15 @@ export const articles = [
 		slug: 'options/disallow-parallel-encoding',
 	},
 	{
+		id: 'options/double-click-action',
+		title: 'Double-click action',
+		relativePath: 'docs/options/double-click-action.mdx',
+		compId: 'articles-docs-options-double-click-action',
+		crumb: 'Options',
+		noAi: false,
+		slug: 'options/double-click-action',
+	},
+	{
 		id: 'options/duration',
 		title: 'Override Duration',
 		relativePath: 'docs/options/duration.mdx',
@@ -2114,6 +2123,15 @@ export const articles = [
 		crumb: 'CLI Reference',
 		noAi: false,
 		slug: 'cli/canvas-capture/index',
+	},
+	{
+		id: 'cli/elements/add-library',
+		title: 'npx remotion elements add-library',
+		relativePath: 'docs/cli/elements/add-library.mdx',
+		compId: 'articles-docs-cli-elements-add-library',
+		crumb: 'CLI Reference',
+		noAi: false,
+		slug: 'cli/elements/add-library',
 	},
 	{
 		id: 'cli/elements/index',
@@ -6191,15 +6209,6 @@ export const articles = [
 		crumb: 'License and terms',
 		noAi: false,
 		slug: 'license/faq',
-	},
-	{
-		id: 'license/which-license',
-		title: 'Which license is needed?',
-		relativePath: 'docs/license/which-license.mdx',
-		compId: 'articles-docs-license-which-license',
-		crumb: 'License and terms',
-		noAi: false,
-		slug: 'license/which-license',
 	},
 	{
 		id: 'license/pricing',
