@@ -112,6 +112,7 @@
         "@code-hike/lighter": "1.0.3",
         "@remotion/captions": "workspace:*",
         "@remotion/cli": "workspace:*",
+        "@remotion/design": "workspace:*",
         "@remotion/effects": "workspace:*",
         "@remotion/eslint-config-internal": "workspace:*",
         "@remotion/fonts": "workspace:*",
@@ -1592,7 +1593,10 @@
         "zod": "3.22.3",
       },
       "devDependencies": {
+        "@remotion/design": "workspace:*",
         "@remotion/eslint-config-internal": "workspace:*",
+        "@remotion/gif": "workspace:*",
+        "@remotion/shapes": "workspace:*",
         "@remotion/studio": "workspace:*",
         "@remotion/web-renderer": "workspace:*",
         "@types/react": "18.3.1",

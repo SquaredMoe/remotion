@@ -88,6 +88,7 @@ import {
 	HEIGHT as EFFECT_SHOWCASE_HEIGHT,
 	WIDTH as EFFECT_SHOWCASE_WIDTH,
 } from './effects/EffectShowcaseScaffold';
+import {EffectsShort, effectsShortSchema} from './effects/EffectsShort';
 import {BillboardForeground} from './effects/experiments/BillboardForeground';
 import {FxIconComposition} from './effects/FxIconComposition';
 import {Goal} from './effects/Goal';
@@ -97,6 +98,7 @@ import {
 	PatternEffectShowcase,
 	patternEffectShowcaseDurationInFrames,
 } from './effects/PatternEffectShowcase';
+import {RangeInputScene} from './effects/RangeInputScene';
 import {
 	RoughNotationShowcase,
 	roughNotationShowcaseDurationInFrames,
@@ -110,6 +112,7 @@ import {
 	ZigzagLinearBlurShowcase,
 	zigzagLinearBlurShowcaseDurationInFrames,
 } from './effects/ZigzagLinearBlurShowcase';
+import {EffectsIntroCaptureComposition} from './EffectsIntroCaptureComposition';
 import {EffectsRecordingComposition} from './EffectsRecordingComposition';
 import {EmailSignature} from './EmailSignature';
 import {ExploreBackgroundRemovalRecording20261027Composition} from './ExploreBackgroundRemovalRecording20261027Composition';
@@ -339,6 +342,43 @@ export const RemotionRoot: React.FC = () => {
 		<>
 			<AgenticallyProgrammaticallyCompositions />
 			<MotionBlurCompositions />
+			<Folder name="EffectsPromo">
+				<Composition
+					id="EffectsIntroCapture"
+					component={EffectsIntroCaptureComposition}
+					defaultProps={{introEdit: false}}
+					durationInFrames={287}
+					fps={30}
+					width={1616}
+					height={1440}
+				/>
+				<Composition
+					id="RangeInput"
+					component={RangeInputScene}
+					width={640}
+					height={360}
+					fps={30}
+					durationInFrames={150}
+				/>
+				<Composition
+					id="EffectsShort"
+					component={EffectsShort}
+					schema={effectsShortSchema}
+					defaultProps={{
+						format: 'portrait',
+						ending: 'Power Rangers',
+						rangersMusic: 'Inferadise + servo',
+					}}
+					calculateMetadata={({props}) => ({
+						width: props.format === 'portrait' ? 1080 : 1920,
+						height: props.format === 'portrait' ? 1920 : 1080,
+					})}
+					durationInFrames={1337}
+					fps={30}
+					width={1080}
+					height={1920}
+				/>
+			</Folder>
 			<Folder name="VideoElements">
 				<Composition
 					id="CodexUI"

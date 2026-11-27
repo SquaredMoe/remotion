@@ -29,6 +29,7 @@ import {
 import {AnimatedCaptionsComposition} from './CaptionsTester/AnimatedCaptionsComposition';
 import {ClassSerialization} from './ClassSerialization';
 import {ColorInterpolation} from './ColorInterpolation';
+import {CombinedCaptionedVideoExample} from './CombinedCaptionedVideoExample';
 import {
 	COMMITTED_HOLDS_DURATION,
 	COMMITTED_HOLDS_HEIGHT,
@@ -118,6 +119,7 @@ import {
 	ZoomInOutTransitionDocThumb,
 } from './HtmlInCanvas';
 import {HtmlInCanvasFallbackExample} from './HtmlInCanvas/fallback';
+import {GrowBoundsButton} from './HtmlInCanvas/grow-bounds-button';
 import {HugeImage} from './HugeImage';
 import {HugePayload, hugePayloadSchema} from './HugePayload';
 import {IntrinsicDurationLoopTestbed} from './IntrinsicDurationLoopTestbed';
@@ -1293,6 +1295,14 @@ export const Index: React.FC = () => {
 					durationInFrames={100}
 				/>
 				<Folder name="html-in-canvas">
+					<Composition
+						id="GrowBoundsButton"
+						component={GrowBoundsButton}
+						fps={30}
+						height={600}
+						width={960}
+						durationInFrames={120}
+					/>
 					<Composition
 						id="BouncingVideoMotionBlur"
 						component={BouncingVideoMotionBlur}
@@ -3250,6 +3260,14 @@ export const Index: React.FC = () => {
 				durationInFrames={300}
 			/>
 			<Folder name="VisualModeTests">
+				<Composition
+					id="captioned-video-combined"
+					component={CombinedCaptionedVideoExample}
+					width={1920}
+					height={1080}
+					fps={30}
+					durationInFrames={150}
+				/>
 				<Composition
 					id="keyframe-trim-testbed"
 					component={KeyframeTrimTestbed}

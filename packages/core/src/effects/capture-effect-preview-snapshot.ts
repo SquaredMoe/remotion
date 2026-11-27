@@ -1,3 +1,5 @@
+import {effectCanvasGeometries} from './effect-canvas-geometries.js';
+
 export const captureEffectPreviewSnapshot = (
 	element: Element | null,
 ): HTMLCanvasElement | null => {
@@ -17,8 +19,8 @@ export const captureEffectPreviewSnapshot = (
 			? [element]
 			: Array.from(element.querySelectorAll('canvas, img, video')).filter(
 					(candidate) => {
-						// Canvas fallback children are not part of the rendered frame.
-						if (candidate.parentElement?.closest('canvas')) {
+						const parentCanvas = candidate.parentElement?.closest('canvas');
+						if (parentCanvas && element.contains(parentCanvas)) {
 							return false;
 						}
 
@@ -171,6 +173,11 @@ export const captureEffectPreviewSnapshot = (
 		context.drawImage(source, offsets[0], offsets[1], drawWidth, drawHeight);
 		// Detect a tainted capture once, before attempting every effect preview.
 		context.getImageData(0, 0, 1, 1);
+		const effectGeometry = effectCanvasGeometries.get(source);
+		if (effectGeometry) {
+			effectCanvasGeometries.set(canvas, effectGeometry);
+		}
+
 		return canvas;
 	} catch {
 		if (canvas) {
